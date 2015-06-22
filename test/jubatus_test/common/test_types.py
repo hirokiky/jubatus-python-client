@@ -2,7 +2,7 @@ from jubatus.common import *
 from jubatus.common.compat import b
 import unittest
 
-class TypeCheckTest(unittest.TestCase):
+class TestTypeCheck(unittest.TestCase):
     def assertTypeOf(self, type, value):
         self.assertEquals(value, type.from_msgpack(value))
         self.assertEquals(value, type.to_msgpack(value))
@@ -96,6 +96,3 @@ class TypeCheckTest(unittest.TestCase):
         self.assertTypeError(typ, 1)
         self.assertTypeError(typ, [])
         self.assertTypeError(typ, None)
-
-if __name__ == '__main__':
-    unittest.main()

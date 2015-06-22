@@ -15,7 +15,7 @@ host = "127.0.0.1"
 port = 21004
 timeout = 10
 
-class StatTest(unittest.TestCase):
+class TestStat(unittest.TestCase):
     def setUp(self):
         self.config = {
           "window_size": 10
@@ -97,8 +97,3 @@ class StatTest(unittest.TestCase):
 
     def test_get_status(self):
         self.cli.get_status()
-
-if __name__ == '__main__':
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(StatTest)
-    unittest.TextTestRunner().run(test_suite)
-

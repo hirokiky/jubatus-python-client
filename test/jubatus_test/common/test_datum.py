@@ -3,7 +3,7 @@ from jubatus.common.compat import b
 import unittest
 import msgpack
 
-class DatumTest(unittest.TestCase):
+class TestDatum(unittest.TestCase):
     def test_pack(self):
         self.assertEquals(
             msgpack.packb(([['name', 'Taro']], [['age', 20.0]], [])),
@@ -89,6 +89,3 @@ class DatumTest(unittest.TestCase):
             'num_values: [[\'age\', 20.0]], binary_values: [[\'image\', \'0101\']]}' == s or
             'datum{string_values: [[\'name\', \'john\']], '
             'num_values: [[\'age\', 20.0]], binary_values: [[\'image\', b\'0101\']]}' == s)
-
-if __name__ == '__main__':
-    unittest.main()

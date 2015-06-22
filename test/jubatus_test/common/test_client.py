@@ -49,7 +49,7 @@ class AnyType(object):
     def from_msgpack(self, v):
         return v
 
-class ClientTest(unittest.TestCase):
+class TestClient(unittest.TestCase):
     def test_unknown_method(self):
         c = jubatus.common.Client(AlwaysRaiseUnknownMethod(), "name")
         self.assertRaises(jubatus.common.UnknownMethod, c.call, "test", [], None, [])
@@ -66,6 +66,3 @@ class ClientTest(unittest.TestCase):
         c = jubatus.common.Client(Echo(), "name")
         self.assertEquals("test", c.call("test", [], AnyType(), []))
         self.assertRaises(TypeError, c.call, "test", [1], AnyType(), [])
-
-if __name__ == '__main__':
-    unittest.main()

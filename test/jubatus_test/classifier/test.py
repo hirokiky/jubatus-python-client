@@ -14,7 +14,7 @@ host = "127.0.0.1"
 port = 21001
 timeout = 10
 
-class ClassifierTest(unittest.TestCase):
+class TestClassifier(unittest.TestCase):
     def setUp(self):
         self.config = {
             "method": "AROW",
@@ -75,8 +75,3 @@ class ClassifierTest(unittest.TestCase):
     def test_str(self):
         self.assertEqual("estimate_result{label: label, score: 1.0}",
                          str(EstimateResult("label", 1.0)))
-
-
-if __name__ == '__main__':
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(ClassifierTest)
-    unittest.TextTestRunner().run(test_suite)

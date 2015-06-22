@@ -16,7 +16,7 @@ host = "127.0.0.1"
 port = 21003
 timeout = 10
 
-class RecommenderTest(unittest.TestCase):
+class TestRecommender(unittest.TestCase):
     def setUp(self):
         self.config = {
             "method": "inverted_index",
@@ -101,8 +101,3 @@ class RecommenderTest(unittest.TestCase):
 
     def test_get_status(self):
         self.cli.get_status()
-
-if __name__ == '__main__':
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(RecommenderTest)
-    unittest.TextTestRunner().run(test_suite)
-

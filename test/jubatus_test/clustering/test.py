@@ -15,7 +15,7 @@ host = "127.0.0.1"
 port = 21008
 timeout = 10
 
-class ClusteringTest(unittest.TestCase):
+class TestClustering(unittest.TestCase):
     def setUp(self):
         self.config = {
             "method" : "kmeans",
@@ -97,7 +97,3 @@ class ClusteringTest(unittest.TestCase):
         self.cli.push([d])
         res = self.cli.get_nearest_members(q)
         self.assertTrue(isinstance(res[0], WeightedDatum))
-
-if __name__ == '__main__':
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(ClusteringTest)
-    unittest.TextTestRunner().run(test_suite)

@@ -9,7 +9,7 @@ host = "127.0.0.1"
 port = 21000
 timeout = 10
 
-class ErrorTest(unittest.TestCase):
+class TestError(unittest.TestCase):
     def setUp(self):
         self.config = {
             "method": "AROW",

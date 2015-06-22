@@ -14,7 +14,7 @@ host = "127.0.0.1"
 port = 21005
 timeout = 10
 
-class GraphTest(unittest.TestCase):
+class TestGraph(unittest.TestCase):
     def setUp(self):
         self.config = {
             "method": "graph_wo_index",
@@ -75,8 +75,3 @@ class GraphTest(unittest.TestCase):
                          str(Edge({}, 'src', 'tgt')))
         self.assertEqual("shortest_path_query{source: src, target: tgt, max_hop: 10, query: preset_query{edge_query: [], node_query: []}}",
                          str(ShortestPathQuery('src', 'tgt', 10, PresetQuery([], []))))
-
-if __name__ == '__main__':
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(GraphTest)
-    unittest.TextTestRunner().run(test_suite)
-

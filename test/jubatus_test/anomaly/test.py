@@ -16,7 +16,7 @@ host = "127.0.0.1"
 port = 21006
 timeout = 10
 
-class AnomalyTest(unittest.TestCase):
+class TestAnomaly(unittest.TestCase):
     def setUp(self):
         self.config = {
             "method": "lof",
@@ -102,8 +102,3 @@ class AnomalyTest(unittest.TestCase):
 
     def test_get_status(self):
         self.cli.get_status()
-
-if __name__ == '__main__':
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(AnomalyTest)
-    unittest.TextTestRunner().run(test_suite)
-

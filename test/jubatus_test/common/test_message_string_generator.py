@@ -3,7 +3,7 @@
 from jubatus.common import MessageStringGenerator
 import unittest
 
-class MessageStringGeneratorTest(unittest.TestCase):
+class TestMessageStringGenerator(unittest.TestCase):
     def testEmpty(self):
         gen = MessageStringGenerator()
         gen.open("test")
@@ -31,6 +31,3 @@ class MessageStringGeneratorTest(unittest.TestCase):
         gen.add("k1", 1)
         gen.close()
         self.assertEquals("test{k1: 1}", gen.to_string())
-
-if __name__ == '__main__':
-    unittest.main()

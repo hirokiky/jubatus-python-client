@@ -14,7 +14,7 @@ host = "127.0.0.1"
 port = 21002
 timeout = 10
 
-class RegressionTest(unittest.TestCase):
+class TestRegression(unittest.TestCase):
     def setUp(self):
         self.config = {
             "method": "PA",
@@ -72,8 +72,3 @@ class RegressionTest(unittest.TestCase):
 
     def test_get_status(self):
         self.cli.get_status()
-
-if __name__ == '__main__':
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(RegressionTest)
-    unittest.TextTestRunner().run(test_suite)
-

@@ -16,7 +16,7 @@ host = "127.0.0.1"
 port = 21007
 timeout = 10
 
-class NearestNeighborTest(unittest.TestCase):
+class TestNearestNeighbor(unittest.TestCase):
     def setUp(self):
         self.config = {
             "method": "lsh",
@@ -80,8 +80,3 @@ class NearestNeighborTest(unittest.TestCase):
 
     def test_get_status(self):
         self.cli.get_status()
-
-if __name__ == '__main__':
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(NearestNeighborTest)
-    unittest.TextTestRunner().run(test_suite)
-    
