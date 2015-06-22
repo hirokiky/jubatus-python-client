@@ -1,23 +1,17 @@
-try:
-    from setuptools import setup, find_packages
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup, find_packages
 
 import os
-import sys
-import unittest
 import os.path
-import platform
 
-sys.path.append('jubatus')
-sys.path.append('test')
 
 def read(name):
     return open(os.path.join(os.path.dirname(__file__), name)).read()
 
+
 setup(name='jubatus',
-      version=read('VERSION').rstrip(),
-      description='Jubatus is a distributed processing framework and streaming machine learning library. This is the Jubatus client in Python.',
+      version='0.7.1',
+      description='Jubatus is a distributed processing framework and '
+                  'streaming machine learning library. This is the Jubatus client in Python.',
       long_description=read('README.rst'),
       author='PFN & NTT & Hiroki KIYOHARA',
       author_email='jubatus@googlegroups.com',
@@ -41,7 +35,4 @@ setup(name='jubatus',
           'Operating System :: POSIX :: Linux',
           'Programming Language :: Python',
           'Topic :: Scientific/Engineering :: Information Analysis'
-      ],
-
-      test_suite='jubatus_test',
-)
+      ])
