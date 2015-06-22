@@ -3,14 +3,17 @@ from jubatus.common.compat import b
 import unittest
 import msgpack
 
+
 class TestDatum(unittest.TestCase):
+
     def test_pack(self):
         self.assertEquals(
             msgpack.packb(([['name', 'Taro']], [['age', 20.0]], [])),
             msgpack.packb(Datum({'name': 'Taro', 'age': 20}).to_msgpack()))
 
     def test_unpack(self):
-        d = Datum.from_msgpack(([['name', 'Taro']], [['age', 20.0]], [['img', b('0101')]]))
+        d = Datum.from_msgpack(
+            ([['name', 'Taro']], [['age', 20.0]], [['img', b('0101')]]))
         self.assertEquals(
             [('name', 'Taro')],
             d.string_values)

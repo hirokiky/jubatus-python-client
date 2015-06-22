@@ -1,13 +1,14 @@
 from .message_string_generator import MessageStringGenerator
-from .types import *
+from .types import *  # NOQA
 from .compat import int_types, string_types, binary_types
+
 
 class Datum:
     TYPE = TTuple(TList(TTuple(TString(), TString())),
                   TList(TTuple(TString(), TFloat())),
                   TList(TTuple(TString(), TRaw())))
 
-    def __init__(self, values = {}):
+    def __init__(self, values={}):
         self.string_values = []
         self.num_values = []
         self.binary_values = []
@@ -56,7 +57,7 @@ class Datum:
             self.string_values,
             self.num_values,
             self.binary_values,
-            )
+        )
 
     @staticmethod
     def from_msgpack(arg):

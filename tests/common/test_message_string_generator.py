@@ -3,7 +3,9 @@
 from jubatus.common import MessageStringGenerator
 import unittest
 
+
 class TestMessageStringGenerator(unittest.TestCase):
+
     def testEmpty(self):
         gen = MessageStringGenerator()
         gen.open("test")

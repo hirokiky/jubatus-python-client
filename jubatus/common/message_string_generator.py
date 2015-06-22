@@ -3,7 +3,9 @@ CLOSE = "}"
 COLON = ": "
 DELIMITER = ", "
 
+
 class MessageStringGenerator:
+
     def __init__(self):
         self.data = []
         self.first = True

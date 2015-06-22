@@ -1,8 +1,10 @@
-from jubatus.common import *
+from jubatus.common import *  # NOQA
 from jubatus.common.compat import b
 import unittest
 
+
 class TestTypeCheck(unittest.TestCase):
+
     def assertTypeOf(self, type, value):
         self.assertEquals(value, type.from_msgpack(value))
         self.assertEquals(value, type.to_msgpack(value))

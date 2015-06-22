@@ -1,12 +1,18 @@
 import msgpackrpc
-from .types import *
+from .types import *  # NOQA
+
 
 class InterfaceMismatch(Exception):
     pass
+
+
 class TypeMismatch(InterfaceMismatch):
     pass
+
+
 class UnknownMethod(InterfaceMismatch):
     pass
+
 
 def error_handler(e):
     if e == 1:
@@ -17,14 +23,17 @@ def error_handler(e):
     else:
         raise msgpackrpc.error.RPCError(e)
 
+
 class Client(object):
+
     def __init__(self, client, name):
         self.client = client
         self.name = name
 
     def call(self, method, args, ret_type, args_type):
         if len(args) != len(args_type):
-            # This error does not occurr if a client code is correctly generated
+            # This error does not occurr if a client code is correctly
+            # generated
             message = "\"%s\" takes %d argument, but %d given" \
                 % (method, len(args_type), len(args))
             raise TypeError(message)
@@ -37,10 +46,12 @@ class Client(object):
         future.attach_error_handler(error_handler)
         ret = future.get()
 
-        if ret_type != None:
+        if ret_type is not None:
             return ret_type.from_msgpack(ret)
 
+
 class ClientBase(object):
+
     def __init__(self, host, port, name, timeout=10):
         address = msgpackrpc.Address(host, port)
         self.client = msgpackrpc.Client(address, timeout=timeout,
@@ -60,7 +71,7 @@ class ClientBase(object):
         return self.jubatus_client.call("save", [id], TBool(), [TString()])
 
     def load(self, id):
-      return self.jubatus_client.call("load", [id], TBool(), [TString()])
+        return self.jubatus_client.call("load", [id], TBool(), [TString()])
 
     def do_mix(self):
         return self.jubatus_client.call("do_mix", [], TBool(), [])
