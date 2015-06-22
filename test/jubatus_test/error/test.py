@@ -2,7 +2,8 @@ import unittest
 import json
 import msgpackrpc
 import jubatus.common
-from jubatus_test.test_util import TestUtil
+
+from jubatus.testing import TestUtil
 
 host = "127.0.0.1"
 port = 21000

@@ -8,7 +8,8 @@ from math import sqrt
 
 from jubatus.stat.client import Stat
 from jubatus.stat.types import *
-from jubatus_test.test_util import TestUtil
+
+from jubatus.testing import TestUtil
 
 host = "127.0.0.1"
 port = 21004

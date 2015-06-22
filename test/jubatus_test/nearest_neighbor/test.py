@@ -8,8 +8,9 @@ import msgpackrpc
 
 from jubatus.nearest_neighbor.client import NearestNeighbor
 from jubatus.nearest_neighbor.types  import *
-from jubatus_test.test_util import TestUtil
 from jubatus.common import Datum
+
+from jubatus.testing import TestUtil
 
 host = "127.0.0.1"
 port = 21007
