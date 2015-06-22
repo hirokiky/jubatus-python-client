@@ -9,7 +9,7 @@ def read(name):
 
 
 setup(name='jubatus',
-      version='0.7.1',
+      version='0.7.2',
       description='Jubatus is a distributed processing framework and '
                   'streaming machine learning library. This is the Jubatus client in Python.',
       long_description=read('README.rst'),
