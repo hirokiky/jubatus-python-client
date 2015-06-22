@@ -1,5 +1,3 @@
-jubatus/*
-!jubatus/common/
 *.egg-info
 *.egg
 *.pyc
