@@ -1,4 +1,5 @@
 from jubatus.common import *
+from jubatus.common.compat import b
 import unittest
 
 class TypeCheckTest(unittest.TestCase):
@@ -39,7 +40,7 @@ class TypeCheckTest(unittest.TestCase):
         self.assertTypeError(TString(), 1)
 
     def testRaw(self):
-        self.assertTypeOf(TRaw(), "test")
+        self.assertTypeOf(TRaw(), b("test"))
         self.assertTypeError(TRaw(), u"test")
         self.assertTypeError(TRaw(), 1)
 
