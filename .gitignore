@@ -9,3 +9,7 @@ jubatus/*
 *.json
 *~
 build/
+.idea/
+env/
+.tox/
+tmp/
